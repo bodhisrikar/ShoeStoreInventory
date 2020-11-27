@@ -9,4 +9,6 @@
     <string name="welcome_to_shoe_store_inventory">Welcome to Shoe Store Inventory</string>
     <string name="message_text">Hey there!! Come check our shoe inventory</string>
     <string name="instructions">Instructions</string>
+    <string name="list_of_instructions">1) Click on the button below to view our shoe inventory.
+    2) Scroll through our inventory. Clicking on an item will take you to the details screen. </string>
 </resources>
