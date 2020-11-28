@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.view.marginTop
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -40,6 +41,7 @@ class ShoeListFragment : Fragment() {
     private fun addShoeText(shoe: Shoe) {
         val textView = TextView(requireActivity())
         textView.text = shoe.name
+        textView.setPadding(16, 16, 16, 16)
         shoeListBinding.shoeLl.addView(textView)
     }
 
