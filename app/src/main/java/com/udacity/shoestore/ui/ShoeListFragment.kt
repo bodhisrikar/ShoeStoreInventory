@@ -1,6 +1,7 @@
 package com.udacity.shoestore.ui
 
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -41,7 +42,8 @@ class ShoeListFragment : Fragment() {
     private fun addShoeText(shoe: Shoe) {
         val textView = TextView(requireActivity())
         textView.text = shoe.name
-        textView.setPadding(16, 16, 16, 16)
+        textView.setPadding(16, 16, 0, 16)
+        textView.gravity = Gravity.START
         shoeListBinding.shoeLl.addView(textView)
     }
 
