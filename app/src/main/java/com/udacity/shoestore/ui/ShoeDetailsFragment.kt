@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.FragmentShoeDetailsBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -13,6 +15,7 @@ import com.udacity.shoestore.R
  * create an instance of this fragment.
  */
 class ShoeDetailsFragment : Fragment() {
+    private lateinit var shoeDetailsBinding: FragmentShoeDetailsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +23,8 @@ class ShoeDetailsFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shoe_details, container, false)
+        shoeDetailsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
+        return shoeDetailsBinding.root
     }
 
     companion object {
