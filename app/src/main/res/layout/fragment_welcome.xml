@@ -35,12 +35,12 @@
             android:layout_marginBottom="220dp"
             android:text="@string/message_text"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/proceed_to_shoe_store_inventory_button"
+            app:layout_constraintBottom_toTopOf="@+id/instructions_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/instructions_textView" />
 
         <Button
-            android:id="@+id/proceed_to_shoe_store_inventory_button"
+            android:id="@+id/instructions_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

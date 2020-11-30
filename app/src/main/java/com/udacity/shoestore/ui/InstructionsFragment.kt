@@ -25,7 +25,7 @@ class InstructionsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         instructionsFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
-        instructionsFragmentBinding.instructionsButton.setOnClickListener(Navigation.createNavigateOnClickListener(InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()))
+        instructionsFragmentBinding.proceedToShoeStoreInventoryButton.setOnClickListener(Navigation.createNavigateOnClickListener(InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()))
         return instructionsFragmentBinding.root
     }
 
