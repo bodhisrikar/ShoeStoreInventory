@@ -11,6 +11,7 @@ import androidx.core.view.marginTop
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.models.Shoe
@@ -32,19 +33,21 @@ class ShoeListFragment : Fragment() {
         // Inflate the layout for this fragment
         shoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         activityViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoes ->
-            for (shoe in shoes) {
-                addShoeText(shoe)
+            for ((index,shoe) in shoes.withIndex()) {
+                addShoeText(index, shoe)
             }
         })
         return shoeListBinding.root
     }
 
-    private fun addShoeText(shoe: Shoe) {
+    private fun addShoeText(index: Int, shoe: Shoe) {
         val textView = TextView(requireActivity())
         textView.text = shoe.name
-        textView.setPadding(16, 16, 0, 16)
-        textView.gravity = Gravity.START
+        textView.setPadding(16, 16, 16, 16)
+        textView.gravity = Gravity.CENTER_VERTICAL
         shoeListBinding.shoeLl.addView(textView)
+
+        textView.setOnClickListener(Navigation.createNavigateOnClickListener(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment(index)))
     }
 
     companion object {

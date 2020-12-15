@@ -20,7 +20,7 @@
         <action
             android:id="@+id/action_welcomeFragment_to_instructionsFragment"
             app:destination="@id/instructionsFragment"
-            app:popUpTo="@id/loginFragment"
+            app:popUpTo="@id/welcomeFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -42,5 +42,9 @@
     <fragment
         android:id="@+id/shoeDetailsFragment"
         android:name="com.udacity.shoestore.ui.ShoeDetailsFragment"
-        android:label="ShoeDetailsFragment" />
+        android:label="ShoeDetailsFragment" >
+        <argument
+            android:name="shoeIndex"
+            app:argType="integer" />
+    </fragment>
 </navigation>

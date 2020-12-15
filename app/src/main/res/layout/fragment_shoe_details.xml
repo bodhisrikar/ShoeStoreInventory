@@ -12,22 +12,21 @@
             android:id="@+id/name_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName2"
+            android:layout_marginStart="64dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shoe_edit"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="@string/name" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/shoe_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="84dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/company_edit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.696"
-            app:layout_constraintStart_toEndOf="@+id/name_textView"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -36,21 +35,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:text="@string/company"
-            app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName3"
+            app:layout_constraintBaseline_toBaselineOf="@+id/company_edit"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/company_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="56dp"
-            android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/size_edit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/company_textView"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintTop_toBottomOf="@+id/shoe_edit" />
 
         <TextView
             android:id="@+id/shoeSize_textView"
@@ -58,21 +55,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:text="@string/shoe_size"
-            app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName4"
+            app:layout_constraintBaseline_toBaselineOf="@+id/size_edit"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/size_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="56dp"
-            android:layout_marginEnd="16dp"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/description_edit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/shoeSize_textView"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+            app:layout_constraintTop_toBottomOf="@+id/company_edit" />
 
         <TextView
             android:id="@+id/description_textView"
@@ -80,21 +75,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:text="@string/description"
-            app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName13"
+            app:layout_constraintBaseline_toBaselineOf="@+id/description_edit"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName13"
+            android:id="@+id/description_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="56dp"
             android:ems="10"
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.277"
-            app:layout_constraintStart_toEndOf="@+id/description_textView"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+            app:layout_constraintBottom_toTopOf="@+id/save_button"
+            app:layout_constraintTop_toBottomOf="@+id/size_edit"
+            tools:layout_editor_absoluteX="202dp" />
 
         <Button
             android:id="@+id/cancel_button"
