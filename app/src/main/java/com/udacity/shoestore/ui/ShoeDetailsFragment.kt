@@ -32,10 +32,10 @@ class ShoeDetailsFragment : Fragment() {
         val shoeIndex = ShoeDetailsFragmentArgs.fromBundle(requireArguments()).shoeIndex
         val shoe = mainViewModel.shoeList.value!![shoeIndex]
 
-        shoeDetailsBinding.shoeEdit.setText(shoe.name, TextView.BufferType.EDITABLE)
-        shoeDetailsBinding.companyEdit.setText(shoe.company, TextView.BufferType.EDITABLE)
-        shoeDetailsBinding.sizeEdit.setText(shoe.size.toString(), TextView.BufferType.EDITABLE)
-        shoeDetailsBinding.descriptionEdit.setText(shoe.description, TextView.BufferType.EDITABLE)
+        shoeDetailsBinding.shoeNameEt.setText(shoe.name, TextView.BufferType.EDITABLE)
+        shoeDetailsBinding.companyNameEt.setText(shoe.company, TextView.BufferType.EDITABLE)
+        shoeDetailsBinding.shoeSizeEt.setText(shoe.size.toString(), TextView.BufferType.EDITABLE)
+        shoeDetailsBinding.descriptionEt.setText(shoe.description, TextView.BufferType.EDITABLE)
         return shoeDetailsBinding.root
     }
 
