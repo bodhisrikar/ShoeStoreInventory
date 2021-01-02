@@ -29,20 +29,19 @@ class ShoeListFragment : Fragment() {
         // Inflate the layout for this fragment
         shoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         activityViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoes ->
-            for ((index,shoe) in shoes.withIndex()) {
-                addShoeText(index, shoe)
+            for (shoe in shoes) {
+                addShoeText(shoe)
             }
         })
+        shoeListBinding.addShoesFab.setOnClickListener(Navigation.createNavigateOnClickListener(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment()))
         return shoeListBinding.root
     }
 
-    private fun addShoeText(index: Int, shoe: Shoe) {
+    private fun addShoeText(shoe: Shoe) {
         val textView = TextView(requireActivity())
         textView.text = shoe.name
         textView.setPadding(16, 16, 16, 16)
         textView.gravity = Gravity.CENTER_VERTICAL
         shoeListBinding.shoeLl.addView(textView)
-
-        textView.setOnClickListener(Navigation.createNavigateOnClickListener(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment(index)))
     }
 }
