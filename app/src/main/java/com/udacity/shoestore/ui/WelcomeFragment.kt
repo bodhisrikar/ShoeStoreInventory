@@ -18,18 +18,10 @@ import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 class WelcomeFragment : Fragment() {
     private lateinit var welcomeFragmentBinding: FragmentWelcomeBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         welcomeFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
         welcomeFragmentBinding.instructionsButton.setOnClickListener(Navigation.createNavigateOnClickListener(WelcomeFragmentDirections.actionWelcomeFragmentToInstructionsFragment()))
         return welcomeFragmentBinding.root
-    }
-
-    companion object {
-
     }
 }

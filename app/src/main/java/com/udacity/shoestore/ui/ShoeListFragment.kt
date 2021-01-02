@@ -25,10 +25,6 @@ class ShoeListFragment : Fragment() {
     private lateinit var shoeListBinding: FragmentShoeListBinding
     private val activityViewModel: MainViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         shoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
@@ -48,9 +44,5 @@ class ShoeListFragment : Fragment() {
         shoeListBinding.shoeLl.addView(textView)
 
         textView.setOnClickListener(Navigation.createNavigateOnClickListener(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment(index)))
-    }
-
-    companion object {
-
     }
 }

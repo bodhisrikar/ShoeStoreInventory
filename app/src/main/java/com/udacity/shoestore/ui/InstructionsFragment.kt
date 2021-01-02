@@ -18,18 +18,10 @@ import com.udacity.shoestore.databinding.FragmentInstructionsBinding
 class InstructionsFragment : Fragment() {
     private lateinit var instructionsFragmentBinding: FragmentInstructionsBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         instructionsFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
         instructionsFragmentBinding.proceedToShoeStoreInventoryButton.setOnClickListener(Navigation.createNavigateOnClickListener(InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()))
         return instructionsFragmentBinding.root
-    }
-
-    companion object {
-
     }
 }

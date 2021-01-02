@@ -23,10 +23,6 @@ class ShoeDetailsFragment : Fragment() {
     private val mainViewModel: MainViewModel by viewModels()
     private lateinit var shoeDetailsBinding: FragmentShoeDetailsBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         shoeDetailsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
@@ -38,9 +34,5 @@ class ShoeDetailsFragment : Fragment() {
         shoeDetailsBinding.shoeSizeEt.setText(shoe.size.toString(), TextView.BufferType.EDITABLE)
         shoeDetailsBinding.descriptionEt.setText(shoe.description, TextView.BufferType.EDITABLE)
         return shoeDetailsBinding.root
-    }
-
-    companion object {
-
     }
 }
