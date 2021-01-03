@@ -11,8 +11,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailsBinding
+import com.udacity.shoestore.models.Shoe
 
 /**
  * A simple [Fragment] subclass.
@@ -26,6 +28,13 @@ class ShoeDetailsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         shoeDetailsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
+
+        shoeDetailsBinding.apply {
+            saveBtn.setOnClickListener {
+                mainViewModel.shoeList.value?.add(Shoe(shoeNameEt.text.toString(), shoeSizeEt.text.toString().toDouble(), companyNameEt.text.toString(), descriptionEt.text.toString(), mutableListOf("")))
+                Navigation.createNavigateOnClickListener(ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToShoeListFragment())
+            }
+        }
         return shoeDetailsBinding.root
     }
 }
