@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailsBinding
 import com.udacity.shoestore.models.Shoe
@@ -32,16 +33,21 @@ class ShoeDetailsFragment : Fragment() {
 
         shoeDetailsBinding.apply {
             saveBtn.setOnClickListener {
-                mainViewModel.shoeList.value?.add(
-                    Shoe(
-                        shoeNameEt.text.toString(),
-                        shoeSizeEt.text.toString().toDouble(),
-                        companyNameEt.text.toString(),
-                        descriptionEt.text.toString(),
-                        mutableListOf("", "")
+                if (!shoeNameEt.text.isNullOrBlank() && !shoeSizeEt.text.isNullOrBlank() &&
+                    !companyNameEt.text.isNullOrBlank() && !descriptionEt.text.isNullOrBlank()) {
+                    mainViewModel.shoeList.value?.add(
+                        Shoe(
+                            shoeNameEt.text.toString(),
+                            shoeSizeEt.text.toString().toDouble(),
+                            companyNameEt.text.toString(),
+                            descriptionEt.text.toString(),
+                            mutableListOf("", "")
+                        )
                     )
-                )
-                findNavController().navigate(ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToShoeListFragment())
+                    findNavController().navigate(ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToShoeListFragment())
+                } else {
+                    Snackbar.make(this.root, "Please fill in all the fields", Snackbar.LENGTH_SHORT).show()
+                }
             }
 
             cancelBtn.setOnClickListener {
