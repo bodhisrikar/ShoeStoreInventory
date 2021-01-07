@@ -9,12 +9,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.view.marginTop
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.models.Shoe
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -23,10 +25,11 @@ import com.udacity.shoestore.models.Shoe
  */
 class ShoeListFragment : Fragment() {
     private lateinit var shoeListBinding: FragmentShoeListBinding
-    private val activityViewModel: MainViewModel by viewModels()
+    private val activityViewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+        Timber.i("ShoeListFragment oncreateview called.")
         shoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         activityViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoes ->
             for (shoe in shoes) {

@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -23,7 +24,7 @@ import com.udacity.shoestore.models.Shoe
  * create an instance of this fragment.
  */
 class ShoeDetailsFragment : Fragment() {
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
     private lateinit var shoeDetailsBinding: FragmentShoeDetailsBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -32,7 +33,7 @@ class ShoeDetailsFragment : Fragment() {
 
         shoeDetailsBinding.apply {
             saveBtn.setOnClickListener {
-                mainViewModel.shoeList.value?.add(Shoe(shoeNameEt.text.toString(), shoeSizeEt.text.toString().toDouble(), companyNameEt.text.toString(), descriptionEt.text.toString(), mutableListOf("")))
+                mainViewModel.shoeList.value?.add(Shoe(shoeNameEt.text.toString(), shoeSizeEt.text.toString().toDouble(), companyNameEt.text.toString(), descriptionEt.text.toString(), mutableListOf("", "")))
                 findNavController().navigate(ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToShoeListFragment())
             }
         }
