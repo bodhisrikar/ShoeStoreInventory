@@ -19,4 +19,5 @@
     <string name="save">Save</string>
     <string name="proceed_to_shoe_store_inventory">Proceed to Shoe Store</string>
     <string name="loginInfo">Welcome to the shoe store app. Please login to continue or simply create an account.</string>
+    <string name="logout">Logout</string>
 </resources>
