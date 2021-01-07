@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         navController.addOnDestinationChangedListener { nc: NavController, nd: NavDestination, args: Bundle? ->
             if (nd.id != nc.graph.startDestination) {
+                menu?.clear()
                 menuInflater.inflate(R.menu.menu, menu)
             }
         }
