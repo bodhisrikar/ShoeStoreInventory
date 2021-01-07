@@ -29,7 +29,6 @@ class ShoeListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        Timber.i("ShoeListFragment oncreateview called.")
         shoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         activityViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoes ->
             for (shoe in shoes) {
