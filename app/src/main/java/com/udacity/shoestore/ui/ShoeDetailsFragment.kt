@@ -36,6 +36,10 @@ class ShoeDetailsFragment : Fragment() {
                 mainViewModel.shoeList.value?.add(Shoe(shoeNameEt.text.toString(), shoeSizeEt.text.toString().toDouble(), companyNameEt.text.toString(), descriptionEt.text.toString(), mutableListOf("", "")))
                 findNavController().navigate(ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToShoeListFragment())
             }
+
+            cancelBtn.setOnClickListener {
+                findNavController().navigate(ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToShoeListFragment())
+            }
         }
         return shoeDetailsBinding.root
     }
