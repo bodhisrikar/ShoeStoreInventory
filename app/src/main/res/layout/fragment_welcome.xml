@@ -13,15 +13,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="356dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/welcome_to_shoe_store_inventory"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/list_of_instructions_textView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,12 +28,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="72dp"
             android:layout_marginBottom="220dp"
             android:text="@string/message_text"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/instructions_button"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/instructions_textView" />
 
         <Button
